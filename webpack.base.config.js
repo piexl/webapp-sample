@@ -16,15 +16,8 @@ const SRC_PATH = path.resolve('./src');
 const NODE_MODULES = path.resolve('./node_modules');
 // 打包后的资源根目录（本地物理文件路径）
 const ASSETS_BUILD_PATH = path.resolve('./dist');
-
-//文件路径
-const urlLoader = {
-	loader:'url-loader',
-	options:{	
-		limit:8192,
-		name:'static/images/[name].[hash:7].[ext]'
-	}
-}
+// 资源根目录（可以是 CDN 上的绝对路径，或相对路径）
+const ASSETS_PUBLIC_PATH = 'static/';
 
 //处理css样式
 const cssLoaderConfig = {
@@ -48,45 +41,37 @@ const postcssLoaderConfig = {
 
 //分离样式
 const extractCSS = new ExtractTextPlugin({
-	filename:'static/css/[name].[hash:7].css',
+	filename:ASSETS_PUBLIC_PATH+'css/[name].[hash:7].css',
 	allChunks:true,
 });
 
 //获取多级的入口文件
 function getMultiEntry(globPath){
-  	var entries = [],
+  	var entries = {},
     	basename, tmp, pathname;
-
   	glob.sync(globPath).forEach(function (entry) {
     	basename = path.basename(entry, path.extname(entry));
     	tmp = entry.split('/').splice(-4);
+	
 		var pathsrc = tmp[0]+'/'+tmp[1];
 		if( tmp[0] == 'src' ){
 			pathsrc = tmp[1];
 		}
-	    pathname = pathsrc + '/' + basename; // 正确输出js和html的路径
-	    var fileInfo = {
-	    	pathname: pathname,
-	    	basename: basename
-	    }
-	    entries.push(fileInfo);
-	});
+		//console.log(pathsrc)
+    	pathname = pathsrc + '/' + basename; // 正确输出js和html的路径
+    	entries[pathname] = entry;
+    	//console.log(pathname+'-----------'+entry);
+  	});
   	return entries;
 }
 
 // 获得入口js文件
 function getEntries(){
-	let entries = {
-		// 注意 entry 中的路径都是相对于 SRC_PATH 的路径
-		common:'./assets/js/common.js',//项目公共资源
-		app:'./assets/js/app.js',//主页入口
-		vendor: ['./vendor/flexible.js'],// 第三方依赖名
-	}
-	let views_entries =  getMultiEntry(SRC_PATH+'/views/**/*.js');
-	for(let i in views_entries){
-		let item = views_entries[i];
-		entries[item.basename] = './' + item.pathname + '/' + item.basename + '.js';
-	}
+	let entries =  getMultiEntry(SRC_PATH+'/views/**/*.js');
+	// 注意 entry 中的路径都是相对于 SRC_PATH 的路径
+	entries['common'] = './assets/js/common.js';//项目公共资源
+	entries['app'] = './assets/js/app.js';//主页入口
+	entries['vendor'] = ['./vendor/flexible.js'];// 第三方依赖名
 	return entries;
 }
 
@@ -94,8 +79,8 @@ module.exports = {
 	context: SRC_PATH,
 	entry:getEntries(),
 	output:{
-		filename:'static/js/[name].bundle.js',//打包后输出文件的文件名
-		path:ASSETS_BUILD_PATH,//打包后的文件存放的地方
+		filename:ASSETS_PUBLIC_PATH+'js/[name].bundle.js', //打包后输出文件的文件名
+		path:ASSETS_BUILD_PATH, //打包后的文件存放的地方
 		publicPath:''
 	},
 	module:{
@@ -121,7 +106,7 @@ module.exports = {
 					loader:'url-loader',
 					options:{	
 						limit:8192,
-						name:'static/images/[name].[hash:7].[ext]'
+						name:ASSETS_PUBLIC_PATH+'images/[name].[hash:7].[ext]'
 					}
 				},'image-webpack-loader']
       	    },
@@ -131,7 +116,7 @@ module.exports = {
 					loader:'url-loader',
 					options:{	
 						limit:8192,
-						name:'static/fonts/[name].[hash:7].[ext]'
+						name:ASSETS_PUBLIC_PATH+'fonts/[name].[hash:7].[ext]'
 					}
 				}]
       		},
@@ -187,17 +172,17 @@ module.exports = {
 	]
 };
 
-// 获得入口js文件
+// 获得入口页面文件
 let pages = getMultiEntry(SRC_PATH+'/**/*.html');
-for (let i in pages) {
-	let file = pages[i];
+for (var pathname in pages) {
 	// 配置生成的html文件，定义路径等
-  	let html_conf = {
-    	filename: './' + file.pathname + '.html', // 文件路径
-    	template: './' + file.pathname + '/' + file.basename + '.html', // 模板路径
-    	chunks: [file.pathname, 'vendors', 'manifest'], // 每个html引用的js模块
+  	var conf = {
+    	filename: pathname + '.html',
+    	template: pages[pathname], // 模板路径
+    	chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
     	inject: true              // js插入位置
   	};
   	// 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
-  	module.exports.plugins.push(new HtmlWebpackPlugin(html_conf));
+  	module.exports.plugins.push(new HtmlWebpackPlugin(conf));
 }
+

@@ -7,7 +7,7 @@ const config = require('./webpack.base.config');
 
 // 添加 webpack-dev-server 相关的配置项
 config.devServer = {
-	contentBase: 'build',//默认情况下，将使用当前工作目录作为提供内容的目录，但是你可以修改为其他目录：
+	contentBase: 'dist',//默认情况下，将使用当前工作目录作为提供内容的目录，但是你可以修改为其他目录：
 	inline:true,//设置为true，当源文件改变时会自动刷新页面
 	compress: true,//一切服务都启用gzip 压缩
 	port: 8088,//指定要监听请求的端口号
@@ -27,7 +27,7 @@ config.plugins.push(
 
 // 打开浏览器
 config.plugins.push(
-	new OpenBrowserPlugin({url: 'http://localhost:8088/'})
+	new OpenBrowserPlugin({url: 'http://localhost:8088'})
 );
 
 module.exports = config;
