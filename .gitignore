@@ -1,0 +1,7 @@
+
+#node
+node_modules
+
+#打包文件
+dist
+

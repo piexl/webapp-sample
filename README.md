@@ -1,2 +1,2 @@
 # webapp-sample
-a sample to creat webapp
+a sample to create webapp
