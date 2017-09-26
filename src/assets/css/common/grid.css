@@ -1,0 +1,129 @@
+/*=== 网格系统 ===*/
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.clear-float::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  clear: both;
+}
+.full-box {
+  width: 100%;
+  height: 100%;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.img-box {
+  line-height: 0;
+  font-size: 0;
+}
+/*===== 媒体查询节点 ======*/
+/*===== 颜色的定义 =====*/
+/*===== 品牌颜色设置 =====*/
+/*===== 网站外观的关键颜色设置 =====*/
+/*===== 连接颜色设置 =====*/
+.col-xl-24 {
+  float: left;
+  width: 100%;
+}
+.col-xl-23 {
+  float: left;
+  width: 95.83333333%;
+}
+.col-xl-22 {
+  float: left;
+  width: 91.66666667%;
+}
+.col-xl-21 {
+  float: left;
+  width: 87.5%;
+}
+.col-xl-20 {
+  float: left;
+  width: 83.33333333%;
+}
+.col-xl-19 {
+  float: left;
+  width: 79.16666667%;
+}
+.col-xl-18 {
+  float: left;
+  width: 75%;
+}
+.col-xl-17 {
+  float: left;
+  width: 70.83333333%;
+}
+.col-xl-16 {
+  float: left;
+  width: 66.66666667%;
+}
+.col-xl-15 {
+  float: left;
+  width: 62.5%;
+}
+.col-xl-14 {
+  float: left;
+  width: 58.33333333%;
+}
+.col-xl-13 {
+  float: left;
+  width: 54.16666667%;
+}
+.col-xl-12 {
+  float: left;
+  width: 50%;
+}
+.col-xl-11 {
+  float: left;
+  width: 45.83333333%;
+}
+.col-xl-10 {
+  float: left;
+  width: 41.66666667%;
+}
+.col-xl-9 {
+  float: left;
+  width: 37.5%;
+}
+.col-xl-8 {
+  float: left;
+  width: 33.33333333%;
+}
+.col-xl-7 {
+  float: left;
+  width: 29.16666667%;
+}
+.col-xl-6 {
+  float: left;
+  width: 25%;
+}
+.col-xl-5 {
+  float: left;
+  width: 20.83333333%;
+}
+.col-xl-4 {
+  float: left;
+  width: 16.66666667%;
+}
+.col-xl-3 {
+  float: left;
+  width: 12.5%;
+}
+.col-xl-2 {
+  float: left;
+  width: 8.33333333%;
+}
+.col-xl-1 {
+  float: left;
+  width: 4.16666667%;
+}

@@ -1,0 +1,78 @@
+/*示例页面样式*/
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.clear-float::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  clear: both;
+}
+.full-box {
+  width: 100%;
+  height: 100%;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.img-box {
+  line-height: 0;
+  font-size: 0;
+}
+/*===== 媒体查询节点 ======*/
+/*===== 颜色的定义 =====*/
+/*===== 品牌颜色设置 =====*/
+/*===== 网站外观的关键颜色设置 =====*/
+/*===== 连接颜色设置 =====*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.doc {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 200px;
+  overflow: auto;
+}
+.doc .doc-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #1B1C1D;
+  color: #fff;
+}
+a.doc .doc-nav:hover,
+a.doc .doc-nav:focus {
+  color: #e6e6e6;
+}
+.doc .doc-nav .nav-section {
+  padding: 0 1em;
+  border-bottom: 1px solid #343637;
+}
+.doc .doc-nav ul li {
+  padding-left: 1em;
+}
+.colors .color-item {
+  height: 60px;
+  line-height: 60px;
+}
+.grid .col {
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 1em;
+  background-color: #dcdcdc;
+}
+.grid .col-dark {
+  background-color: #a9a9a9;
+}

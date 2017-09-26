@@ -1,0 +1,44 @@
+// 基础类
+@import "base.less";
+// 变量
+@import "variable.less";
+
+// CSS盒模型
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body{
+	background-color:@body-bg;
+	color:@text-color;
+	font-family:@font-family-base;
+	line-height:@line-height-base;
+	font-size:@font-size-base!important;
+}
+
+// 标题
+h1{font-size:@font-size-h1;}
+h2{font-size:@font-size-h2;}
+h3{font-size:@font-size-h3;}
+h4{font-size:@font-size-h4;}
+h5{font-size:@font-size-h5;}
+h6{font-size:@font-size-h6;}
+
+// 链接
+a {
+  	color: @link-color;
+  	text-decoration: none;
+  	&:hover {
+    	color: @link-hover-color;
+    	text-decoration: underline;
+  	}
+}
+
+
+
+
+
+
+

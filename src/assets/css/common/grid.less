@@ -1,0 +1,33 @@
+/*=== 网格系统 ===*/
+
+// 基础类
+@import "base.less";
+// 变量
+@import "variable.less";
+
+
+//栅格列数
+@grid-columns:24;
+
+
+.calc-grid-column(@index, @class) when (@index > 0) {
+  .col-@{class}-@{index} {
+  	float:left;
+    width: percentage((@index / @grid-columns));
+  }
+}
+
+// 循环列
+.loop-grid-columns(@index, @class) when (@index >= 0) {
+  	.calc-grid-column(@index, @class);
+    // next iteration
+  	.loop-grid-columns((@index - 1), @class);
+}
+
+// 制作栅格函数
+.make-grid(@class) {
+	.loop-grid-columns(@grid-columns, @class);
+}
+
+.make-grid(xl);
+

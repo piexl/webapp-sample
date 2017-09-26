@@ -1,0 +1,35 @@
+// 基础类
+@import "base.less";
+// 变量
+@import "variable.less";
+
+//文字对齐方式
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+.text-center{text-align:center;}
+
+//文字颜色
+.text-primary {
+  .text-color(@brand-primary);
+}
+.text-success{
+  .text-color(@brand-success);
+}
+.text-info{
+  .text-color(@brand-info);
+}
+.text-warning {
+  .text-color(@brand-warning);
+}
+.text-danger{
+  .text-color(@brand-danger);
+}
+
+//背景颜色
+.bg-primary{background-color: @brand-primary;}
+.bg-success{background-color: @brand-success;}
+.bg-info{background-color: @brand-info;}
+.bg-warning{background-color: @brand-warning;}
+.bg-danger{background-color: @brand-danger;}
+.bg-grey{background-color: lighten(@grey, 40%);}
+

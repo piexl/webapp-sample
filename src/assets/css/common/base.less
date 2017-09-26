@@ -1,0 +1,80 @@
+
+
+//浮动
+.float-left{float:left;}
+.float-right{float:right;}
+.clear{clear:both;}
+.clear-float{
+  &::after{
+    content:'';
+    display:block;
+    width:100%;
+    height:0;
+    clear:both;
+  }
+}
+
+
+//充满盒子
+.full-box{
+  width:100%;
+  height:100%;
+}
+
+
+//设置border-box和模型
+.border-box{
+  box-sizing:border-box;
+}
+
+//图片盒子
+.img-box{
+  line-height:0;
+  font-size:0;
+}
+
+// 文字颜色
+.text-color(@color) {
+  color: @color;
+  a&:hover,
+  a&:focus {
+    color: darken(@color, 10%);
+  }
+}
+
+// 透明度
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+//表格聚焦
+.tab-focus() {
+  // WebKit-specific. Other browsers will keep their default outline style.
+  // (Initially tried to also force default via `outline: initial`,
+  // but that seems to erroneously remove the outline in Firefox altogether.)
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+// 阴影
+.box-shadow(@shadow) {
+  box-shadow: @shadow;
+}
+
+//用户选择
+.user-select(@select) {
+  user-select: @select;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+
+/*示例页面样式*/
+// 基础类
+@import "../../assets/css/common/base.less";
+// 变量
+@import "../../assets/css/common/variable.less";
+
+//文档布局
+html,body{.full-box;}
+.doc{
+	@nav-width:200px;
+	.full-box;
+	.border-box;
+	padding-left:@nav-width;
+	overflow:auto;
+	.doc-nav{
+		position:fixed;
+		top:0;
+		left:0;
+		width:@nav-width;
+		height:100%;
+		background-color:@black;
+		.text-color(#fff);
+		.nav-section{
+			padding:0 1em;
+			border-bottom:1px solid lighten(@black, 10%);
+		}
+		ul{
+			li{
+				padding-left:1em;
+			}
+		}
+	}
+}
+
+//颜色
+.colors{
+	.color-item{
+		@height:60px;
+		height:@height;
+		line-height:@height;
+	}
+}
+
+//栅格
+.grid{
+	.col{
+		@height:40px;
+		height:@height;
+		line-height:@height;
+		margin-bottom:1em;
+		background-color:lighten(@grey, 40%);
+		&-dark{
+			background-color:lighten(@grey, 20%);
+		}
+	}
+}
+

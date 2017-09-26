@@ -15,6 +15,11 @@ config.devServer = {
 	historyApiFallback: true,//当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html
 };
 
+// 启用 HMR
+config.plugins.push(
+	new webpack.HotModuleReplacementPlugin()
+);
+
 // 添加 Sourcemap 支持
 config.plugins.push(
 	new webpack.SourceMapDevToolPlugin({

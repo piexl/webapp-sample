@@ -1,0 +1,353 @@
+/*	
+Author:kermit
+Email:455196886@qq.com
+Company:http://dragontrail.com/
+Creattime:2017-09-25
+*/
+/*清除浏览器的默认样式开始*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* KISSY CSS Reset
+理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+特色：1. 适应中文；2. 基于最新主流浏览器。
+维护：玉伯<lifesinger@gmail.com>, 正淳<ragecarrier@gmail.com> */
+/** 清除内外边距 **/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+/** 设置默认字体 **/
+body,
+button,
+input,
+select,
+textarea {
+  font: 14px/1.5 tahoma, arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+/* 将斜体扶正 */
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new,courier,monospace;
+}
+/* 统一等宽字体 */
+small {
+  font-size: 12px;
+}
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+/** 重置列表元素 **/
+ul,
+ol {
+  list-style: none;
+}
+/** 重置文本格式元素 **/
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+/** 重置表单元素 **/
+legend {
+  color: #000;
+}
+/* for ie6 */
+fieldset,
+img {
+  border: 0;
+}
+/* img 搭车：让链接里的 img 无边框 */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+/* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+/** 重置表格元素 **/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*清除浏览器的默认样式结束*/
+/*===== 媒体查询节点 ======*/
+/*===== 颜色的定义 =====*/
+/*===== 品牌颜色设置 =====*/
+/*===== 网站外观的关键颜色设置 =====*/
+/*===== 连接颜色设置 =====*/
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.clear-float::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  clear: both;
+}
+.full-box {
+  width: 100%;
+  height: 100%;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.img-box {
+  line-height: 0;
+  font-size: 0;
+}
+/*=== 网格系统 ===*/
+.col-xl-24 {
+  float: left;
+  width: 100%;
+}
+.col-xl-23 {
+  float: left;
+  width: 95.83333333%;
+}
+.col-xl-22 {
+  float: left;
+  width: 91.66666667%;
+}
+.col-xl-21 {
+  float: left;
+  width: 87.5%;
+}
+.col-xl-20 {
+  float: left;
+  width: 83.33333333%;
+}
+.col-xl-19 {
+  float: left;
+  width: 79.16666667%;
+}
+.col-xl-18 {
+  float: left;
+  width: 75%;
+}
+.col-xl-17 {
+  float: left;
+  width: 70.83333333%;
+}
+.col-xl-16 {
+  float: left;
+  width: 66.66666667%;
+}
+.col-xl-15 {
+  float: left;
+  width: 62.5%;
+}
+.col-xl-14 {
+  float: left;
+  width: 58.33333333%;
+}
+.col-xl-13 {
+  float: left;
+  width: 54.16666667%;
+}
+.col-xl-12 {
+  float: left;
+  width: 50%;
+}
+.col-xl-11 {
+  float: left;
+  width: 45.83333333%;
+}
+.col-xl-10 {
+  float: left;
+  width: 41.66666667%;
+}
+.col-xl-9 {
+  float: left;
+  width: 37.5%;
+}
+.col-xl-8 {
+  float: left;
+  width: 33.33333333%;
+}
+.col-xl-7 {
+  float: left;
+  width: 29.16666667%;
+}
+.col-xl-6 {
+  float: left;
+  width: 25%;
+}
+.col-xl-5 {
+  float: left;
+  width: 20.83333333%;
+}
+.col-xl-4 {
+  float: left;
+  width: 16.66666667%;
+}
+.col-xl-3 {
+  float: left;
+  width: 12.5%;
+}
+.col-xl-2 {
+  float: left;
+  width: 8.33333333%;
+}
+.col-xl-1 {
+  float: left;
+  width: 4.16666667%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  color: #65696c;
+  font-family: 'Microsoft YaHei';
+  line-height: 1.5;
+  font-size: 14px !important;
+}
+h1 {
+  font-size: 21px;
+}
+h2 {
+  font-size: 17px;
+}
+h3 {
+  font-size: 15px;
+}
+h4 {
+  font-size: 14px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 14px;
+}
+a {
+  color: #2185D0;
+  text-decoration: none;
+}
+a:hover {
+  color: #1a69a4;
+  text-decoration: underline;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-primary {
+  color: #2185D0;
+}
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #1a69a4;
+}
+.text-success {
+  color: #21BA45;
+}
+a.text-success:hover,
+a.text-success:focus {
+  color: #198f35;
+}
+.text-info {
+  color: #00B5AD;
+}
+a.text-info:hover,
+a.text-info:focus {
+  color: #00827c;
+}
+.text-warning {
+  color: #FBBD08;
+}
+a.text-warning:hover,
+a.text-warning:focus {
+  color: #cd9903;
+}
+.text-danger {
+  color: #DB2828;
+}
+a.text-danger:hover,
+a.text-danger:focus {
+  color: #b21e1e;
+}
+.bg-primary {
+  background-color: #2185D0;
+}
+.bg-success {
+  background-color: #21BA45;
+}
+.bg-info {
+  background-color: #00B5AD;
+}
+.bg-warning {
+  background-color: #FBBD08;
+}
+.bg-danger {
+  background-color: #DB2828;
+}
+.bg-grey {
+  background-color: #dcdcdc;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}

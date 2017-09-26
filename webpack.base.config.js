@@ -57,10 +57,10 @@ function getMultiEntry(globPath){
 		if( tmp[0] == 'src' ){
 			pathsrc = tmp[1];
 		}
-		//console.log(pathsrc)
-    	pathname = pathsrc + '/' + basename; // 正确输出js和html的路径
+		// console.log(pathsrc)
+    	pathname = basename; // 正确输出js和html的路径
     	entries[pathname] = entry;
-    	//console.log(pathname+'-----------'+entry);
+    	// console.log(pathname+'-----------'+entry);
   	});
   	return entries;
 }
@@ -68,6 +68,7 @@ function getMultiEntry(globPath){
 // 获得入口js文件
 function getEntries(){
 	let entries =  getMultiEntry(SRC_PATH+'/views/**/*.js');
+	console.log('entries',entries)
 	// 注意 entry 中的路径都是相对于 SRC_PATH 的路径
 	entries['common'] = './assets/js/common.js';//项目公共资源
 	entries['app'] = './assets/js/app.js';//主页入口
@@ -173,15 +174,14 @@ module.exports = {
 };
 
 // 获得入口页面文件
-let pages = getMultiEntry(SRC_PATH+'/**/*.html');
+let pages = getMultiEntry(SRC_PATH+'/views/**/*.html');
 for (var pathname in pages) {
 	// 配置生成的html文件，定义路径等
   	var conf = {
-    	filename: pathname + '.html',
+    	filename: pathname + '.html',// 打包路径
     	template: pages[pathname], // 模板路径
-    	chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
-    	inject: true              // js插入位置
   	};
+  	// console.log('conf',conf);
   	// 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
   	module.exports.plugins.push(new HtmlWebpackPlugin(conf));
 }
