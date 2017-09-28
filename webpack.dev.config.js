@@ -1,36 +1,38 @@
 const webpack = require('webpack');
-//æ‰“å¼€æµè§ˆå™¨
+//´ò¿ªä¯ÀÀÆ÷
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
-// è¯»å–åŒä¸€ç›®å½•ä¸‹çš„ base config
+// ¶ÁÈ¡Í¬Ò»Ä¿Â¼ÏÂµÄ base config
 const config = require('./webpack.base.config');
+// ¶Ë¿Ú
+const port = 8088;
 
-// æ·»åŠ  webpack-dev-server ç›¸å…³çš„é…ç½®é¡¹
+// Ìí¼Ó webpack-dev-server Ïà¹ØµÄÅäÖÃÏî
 config.devServer = {
-	contentBase: 'dist',//é»˜è®¤æƒ…å†µä¸‹ï¼Œå°†ä½¿ç”¨å½“å‰å·¥ä½œç›®å½•ä½œä¸ºæä¾›å†…å®¹çš„ç›®å½•ï¼Œä½†æ˜¯ä½ å¯ä»¥ä¿®æ”¹ä¸ºå…¶ä»–ç›®å½•ï¼š
-	inline:true,//è®¾ç½®ä¸ºtrueï¼Œå½“æºæ–‡ä»¶æ”¹å˜æ—¶ä¼šè‡ªåŠ¨åˆ·æ–°é¡µé¢
-	compress: true,//ä¸€åˆ‡æœåŠ¡éƒ½å¯ç”¨gzip å‹ç¼©
-	port: 8088,//æŒ‡å®šè¦ç›‘å¬è¯·æ±‚çš„ç«¯å£å·
-	watchContentBase: true,//å‘Šè¯‰æœåŠ¡å™¨ç›‘è§†é‚£äº›é€šè¿‡ devServer.contentBase é€‰é¡¹æä¾›çš„æ–‡ä»¶
-	historyApiFallback: true,//å½“ä½¿ç”¨ HTML5 History API æ—¶ï¼Œä»»æ„çš„ 404 å“åº”éƒ½å¯èƒ½éœ€è¦è¢«æ›¿ä»£ä¸º index.html
+	contentBase: 'dist',//Ä¬ÈÏÇé¿öÏÂ£¬½«Ê¹ÓÃµ±Ç°¹¤×÷Ä¿Â¼×÷ÎªÌá¹©ÄÚÈİµÄÄ¿Â¼£¬µ«ÊÇÄã¿ÉÒÔĞŞ¸ÄÎªÆäËûÄ¿Â¼£º
+	inline:true,//ÉèÖÃÎªtrue£¬µ±Ô´ÎÄ¼ş¸Ä±äÊ±»á×Ô¶¯Ë¢ĞÂÒ³Ãæ
+	compress: true,//Ò»ÇĞ·şÎñ¶¼ÆôÓÃgzip Ñ¹Ëõ
+	port: port,//Ö¸¶¨Òª¼àÌıÇëÇóµÄ¶Ë¿ÚºÅ
+	watchContentBase: true,//¸æËß·şÎñÆ÷¼àÊÓÄÇĞ©Í¨¹ı devServer.contentBase Ñ¡ÏîÌá¹©µÄÎÄ¼ş
+	historyApiFallback: true,//µ±Ê¹ÓÃ HTML5 History API Ê±£¬ÈÎÒâµÄ 404 ÏìÓ¦¶¼¿ÉÄÜĞèÒª±»Ìæ´úÎª index.html
 };
 
-// å¯ç”¨ HMR
+// ÆôÓÃ HMR
 config.plugins.push(
 	new webpack.HotModuleReplacementPlugin()
 );
 
-// æ·»åŠ  Sourcemap æ”¯æŒ
+// Ìí¼Ó Sourcemap Ö§³Ö
 config.plugins.push(
 	new webpack.SourceMapDevToolPlugin({
 		filename: '[file].map',
-		exclude: ['vendor.js'] // vendor é€šå¸¸ä¸éœ€è¦ sourcemap
+		exclude: ['vendor.js'] // vendor Í¨³£²»ĞèÒª sourcemap
 	})
 );
 
-// æ‰“å¼€æµè§ˆå™¨
+// ´ò¿ªä¯ÀÀÆ÷
 config.plugins.push(
-	new OpenBrowserPlugin({url: 'http://localhost:8088'})
+	new OpenBrowserPlugin({url: 'http://localhost:'+port+'/views/index/index.html'})
 );
 
 module.exports = config;

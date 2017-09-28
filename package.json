@@ -4,8 +4,8 @@
   "description": "a sample to create webapp",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --optimize-minimize",
-    "dev": "webpack-dev-server --colors --config webpack.dev.config.js",
+    "build": "set NODE_ENV=production && webpack --optimize-minimize",
+    "dev": "set NODE_ENV=development && webpack-dev-server --colors --config webpack.dev.config.js",
     "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -8,7 +8,6 @@ const path = require('path');
 const webpack = require('webpack');
 const glob = require('glob');
 
-
 // 配置常量
 // 源代码的根目录（本地物理文件路径）
 const SRC_PATH = path.resolve('./src');
@@ -18,12 +17,14 @@ const NODE_MODULES = path.resolve('./node_modules');
 const ASSETS_BUILD_PATH = path.resolve('./dist');
 // 资源根目录（可以是 CDN 上的绝对路径，或相对路径）
 const ASSETS_PUBLIC_PATH = 'static/';
+// 是否为开发环境
+const IS_PROD = process.env.NODE_ENV === 'production' ? true : false;
 
 //处理css样式
 const cssLoaderConfig = {
 	loader: 'css-loader',
 	options: {
-		minimize: false,// 压缩 css
+		minimize: IS_PROD,// 压缩 css
 		importLoaders:1 ,// 处理样式中import引入进来的文件,
 		url: true, // 配置生成的标识符(ident)
 	}
@@ -52,13 +53,14 @@ function getMultiEntry(globPath){
   	glob.sync(globPath).forEach(function (entry) {
     	basename = path.basename(entry, path.extname(entry));
     	tmp = entry.split('/').splice(-4);
-	
 		var pathsrc = tmp[0]+'/'+tmp[1];
 		if( tmp[0] == 'src' ){
 			pathsrc = tmp[1];
 		}
 		// console.log(pathsrc)
-    	pathname = basename; // 正确输出js和html的路径
+    	// pathname = basename ; // 正确输出js和html的路径
+    	pathname = pathsrc + '/' + tmp[2] + '/' + basename;
+    	// console.log('pathname',pathname)
     	entries[pathname] = entry;
     	// console.log(pathname+'-----------'+entry);
   	});
@@ -82,7 +84,7 @@ module.exports = {
 	output:{
 		filename:ASSETS_PUBLIC_PATH+'js/[name].bundle.js', //打包后输出文件的文件名
 		path:ASSETS_BUILD_PATH, //打包后的文件存放的地方
-		publicPath:''
+		publicPath: IS_PROD ? '../../' : ''
 	},
 	module:{
 		rules:[
@@ -105,7 +107,7 @@ module.exports = {
       	        test: /\.(jpe?g|png|gif|svg)$/i,
       	        use:[{
 					loader:'url-loader',
-					options:{	
+					options:{
 						limit:8192,
 						name:ASSETS_PUBLIC_PATH+'images/[name].[hash:7].[ext]'
 					}
@@ -149,7 +151,7 @@ module.exports = {
 	      		use: [{
 	      			loader: 'html-loader',
 	      			options: {
-	      				minimize: false //是否压缩html
+	      				minimize: IS_PROD //是否压缩html
 	      			}
 	      		}]
 	      	}
@@ -183,7 +185,7 @@ for (var pathname in pages) {
     	// chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
     	// inject: true              // js插入位置
   	};
-  	// console.log('conf',conf);
+  	//console.log('conf',conf);
   	// 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
   	module.exports.plugins.push(new HtmlWebpackPlugin(conf));
 }
