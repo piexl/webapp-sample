@@ -1,4 +1,4 @@
 
 import './examples.less';
 
-console.log('test')
+console.log('examples init')

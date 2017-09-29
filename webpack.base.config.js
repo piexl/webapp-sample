@@ -182,8 +182,8 @@ for (var pathname in pages) {
   	var conf = {
     	filename: pathname + '.html',// 打包路径
     	template: pages[pathname], // 模板路径
-    	// chunks: [pathname, 'vendors', 'manifest'], // 每个html引用的js模块
-    	// inject: true              // js插入位置
+    	chunks: [pathname, 'vendor', 'app', 'common'], // 每个html引用的js模块
+    	inject: true              // js插入位置
   	};
   	//console.log('conf',conf);
   	// 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
