@@ -84,7 +84,7 @@ module.exports = {
 	output:{
 		filename:ASSETS_PUBLIC_PATH+'js/[name].bundle.js', //打包后输出文件的文件名
 		path:ASSETS_BUILD_PATH, //打包后的文件存放的地方
-		publicPath: IS_PROD ? '../../' : ''
+		publicPath: IS_PROD ? '../../' : 'http://localhost:8088/'
 	},
 	module:{
 		rules:[
