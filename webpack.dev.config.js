@@ -32,7 +32,7 @@ config.plugins.push(
 
 // ´ò¿ªä¯ÀÀÆ÷
 config.plugins.push(
-	new OpenBrowserPlugin({url: 'http://localhost:'+port+'/views/index/index.html'})
+	new OpenBrowserPlugin({url: 'http://localhost:'+port})
 );
 
 module.exports = config;

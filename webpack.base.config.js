@@ -18,7 +18,7 @@ const ASSETS_BUILD_PATH = path.resolve('./dist');
 // 资源根目录（可以是 CDN 上的绝对路径，或相对路径）
 const ASSETS_PUBLIC_PATH = 'static/';
 // 是否为开发环境
-const IS_PROD = process.env.NODE_ENV === 'production' ? true : false;
+const IS_PROD = process.env.NODE_ENV === 'production';
 
 //处理css样式
 const cssLoaderConfig = {
