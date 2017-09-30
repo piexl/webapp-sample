@@ -5,6 +5,8 @@
 	<title>Webapp Example</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 360浏览器 6.5+ 使用 webkit 引擎渲染 -->
+	<meta name="renderer" content="webkit">
 	<meta http-equiv="Content-Language" content="zh-CN" />
 </head>
 <body class="doc">
@@ -25,95 +27,151 @@
 		</div>
 	</div>
 </div>
-<div class="container container-fixed">
-	<h2>基本组件</h2>
-	<div class="section" id='section-layout'>
-		<h3>栅格系统</h3>
-		<div class="grid">
-			<div class="col col-dark text-center col-xl-1">col-xl-1</div>
-			<div class="col text-center col-xl-23">col-xl-23</div>
-			<div class="col col-dark text-center col-xl-2">col-xl-2</div>
-			<div class="col text-center col-xl-22">col-xl-22</div>
-			<div class="col col-dark text-center col-xl-3">col-xl-3</div>
-			<div class="col text-center col-xl-21">col-xl-21</div>
-			<div class="col col-dark text-center col-xl-4">col-xl-4</div>
-			<div class="col text-center col-xl-20">col-xl-20</div>
-			<div class="col col-dark text-center col-xl-5">col-xl-5</div>
-			<div class="col text-center col-xl-19">col-xl-19</div>
-			<div class="col col-dark text-center col-xl-6">col-xl-6</div>
-			<div class="col text-center col-xl-18">col-xl-18</div>
-			<div class="col col-dark text-center col-xl-7">col-xl-7</div>
-			<div class="col text-center col-xl-17">col-xl-17</div>
-			<div class="col col-dark text-center col-xl-8">col-xl-8</div>
-			<div class="col text-center col-xl-16">col-xl-16</div>
-			<div class="col col-dark text-center col-xl-9">col-xl-9</div>
-			<div class="col text-center col-xl-15">col-xl-15</div>
-			<div class="col col-dark text-center col-xl-10">col-xl-10</div>
-			<div class="col text-center col-xl-14">col-xl-14</div>
-			<div class="col col-dark text-center col-xl-11">col-xl-11</div>
-			<div class="col text-center col-xl-13">col-xl-13</div>
-			<div class="col col-dark text-center col-xl-12">col-xl-12</div>
-			<div class="col text-center col-xl-12">col-xl-12</div>
-			<div class="col col-dark text-center col-xl-24">col-xl-24</div>
+<div class="doc-body">
+	<div class="container container-fixed">
+		<h2>基本组件</h2>
+		<div class="doc-section" id='section-layout'>
+			<h3>栅格系统</h3>
+			<div class="grid">
+				<div class="col col-dark text-center col-xl-1">col-xl-1</div>
+				<div class="col text-center col-xl-23">col-xl-23</div>
+				<div class="col col-dark text-center col-xl-2">col-xl-2</div>
+				<div class="col text-center col-xl-22">col-xl-22</div>
+				<div class="col col-dark text-center col-xl-3">col-xl-3</div>
+				<div class="col text-center col-xl-21">col-xl-21</div>
+				<div class="col col-dark text-center col-xl-4">col-xl-4</div>
+				<div class="col text-center col-xl-20">col-xl-20</div>
+				<div class="col col-dark text-center col-xl-5">col-xl-5</div>
+				<div class="col text-center col-xl-19">col-xl-19</div>
+				<div class="col col-dark text-center col-xl-6">col-xl-6</div>
+				<div class="col text-center col-xl-18">col-xl-18</div>
+				<div class="col col-dark text-center col-xl-7">col-xl-7</div>
+				<div class="col text-center col-xl-17">col-xl-17</div>
+				<div class="col col-dark text-center col-xl-8">col-xl-8</div>
+				<div class="col text-center col-xl-16">col-xl-16</div>
+				<div class="col col-dark text-center col-xl-9">col-xl-9</div>
+				<div class="col text-center col-xl-15">col-xl-15</div>
+				<div class="col col-dark text-center col-xl-10">col-xl-10</div>
+				<div class="col text-center col-xl-14">col-xl-14</div>
+				<div class="col col-dark text-center col-xl-11">col-xl-11</div>
+				<div class="col text-center col-xl-13">col-xl-13</div>
+				<div class="col col-dark text-center col-xl-12">col-xl-12</div>
+				<div class="col text-center col-xl-12">col-xl-12</div>
+				<div class="col col-dark text-center col-xl-24">col-xl-24</div>
+			</div>
 		</div>
-	</div>
-	<div class="section" id="section-color">
-		<h3>Color 颜色</h3>
-		<p>为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。</p>
-		<h4>品牌颜色</h4>
-		<div class="colors clear-float">
-			<div class="color-item color-item-red col-xl-3"></div>
-			<div class="color-item color-item-orange col-xl-3"></div>
-			<div class="color-item color-item-yellow col-xl-3"></div>
-			<div class="color-item color-item-olive col-xl-3"></div>
-			<div class="color-item color-item-green col-xl-3"></div>
-			<div class="color-item color-item-teal col-xl-3"></div>
-			<div class="color-item color-item-blue col-xl-3"></div>
-			<div class="color-item color-item-violet col-xl-3"></div>
-			<div class="color-item color-item-purple col-xl-3"></div>
-			<div class="color-item color-item-pink col-xl-3"></div>
-			<div class="color-item color-item-brown col-xl-3"></div>
-			<div class="color-item color-item-grey col-xl-3"></div>
-			<div class="color-item color-item-black col-xl-3"></div>
+		<div class="doc-section" id="section-color">
+			<h3>Color 颜色</h3>
+			<p>为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。</p>
+			<h4>品牌颜色</h4>
+			<div class="colors clear-float">
+				<div class="color-item color-item-red col-xl-3"></div>
+				<div class="color-item color-item-orange col-xl-3"></div>
+				<div class="color-item color-item-yellow col-xl-3"></div>
+				<div class="color-item color-item-olive col-xl-3"></div>
+				<div class="color-item color-item-green col-xl-3"></div>
+				<div class="color-item color-item-teal col-xl-3"></div>
+				<div class="color-item color-item-blue col-xl-3"></div>
+				<div class="color-item color-item-violet col-xl-3"></div>
+				<div class="color-item color-item-purple col-xl-3"></div>
+				<div class="color-item color-item-pink col-xl-3"></div>
+				<div class="color-item color-item-brown col-xl-3"></div>
+				<div class="color-item color-item-grey col-xl-3"></div>
+				<div class="color-item color-item-black col-xl-3"></div>
+			</div>
 		</div>
-	</div>
-	<div class="section">
-		<h3>文字颜色</h3>
-		<p class="text-primary">text-primary</p>
-		<p class="text-success">text-success</p>
-		<p class="text-info">text-info</p>
-		<p class="text-warning">text-warning</p>
-		<p class="text-danger">text-danger</p>
-	</div>
-	<div class="section">
-		<h3>背景颜色</h3>
-		<div class="clear-float">
-			<div class="bg-primary col-xl-4 text-center">bg-primary</div>
-			<div class="bg-success col-xl-4 text-center">bg-success</div>
-			<div class="bg-info col-xl-4 text-center">bg-info</div>
-			<div class="bg-warning col-xl-4 text-center">bg-warning</div>
-			<div class="bg-danger col-xl-4 text-center">bg-danger</div>
-			<div class="bg-grey col-xl-4 text-center">bg-danger</div>
+		<div class="doc-section">
+			<h3>文字颜色</h3>
+			<p class="text-primary">text-primary</p>
+			<p class="text-success">text-success</p>
+			<p class="text-info">text-info</p>
+			<p class="text-warning">text-warning</p>
+			<p class="text-danger">text-danger</p>
 		</div>
-	</div>
-	<div class="section" id="section-icon">
-		<h3>icon 图标</h3>
-		<p>基础图标使用了<a href="http://fontawesome.io/icons/">fontawesome</a></p>
-		<h4>41 New Icons in 4.7</h4>
-		<ul class="icon-list">
-			<li class="col-xl-4"><a href="http://fontawesome.io/icon/address-book"><i class="fa fa-address-book" aria-hidden="true"></i>address-book</a></li>
-		</ul>
-	</div>
-	<div class="section" id="section-button">
-		<h3>按钮</h3>
-		<div class="clear-float">
-			<button class="btn">默认按钮</button>
-			<button class="btn btn-primary">主按钮</button>
-			<button class="btn btn-success">成功按钮</button>
-			<button class="btn btn-warning">警告按钮</button>
-			<button class="btn btn-danger">危险按钮</button>
-			<button class="btn btn-info">信息按钮</button>
-			<button class="btn btn-link">文字按钮</button>
+		<div class="doc-section">
+			<h3>背景颜色</h3>
+			<div class="clear-float">
+				<div class="bg-primary col-xl-4 text-center">bg-primary</div>
+				<div class="bg-success col-xl-4 text-center">bg-success</div>
+				<div class="bg-info col-xl-4 text-center">bg-info</div>
+				<div class="bg-warning col-xl-4 text-center">bg-warning</div>
+				<div class="bg-danger col-xl-4 text-center">bg-danger</div>
+				<div class="bg-grey col-xl-4 text-center">bg-danger</div>
+			</div>
+		</div>
+		<div class="doc-section" id="section-icon">
+			<h3>icon 图标</h3>
+			<p>基础图标使用了<a href="http://fontawesome.io/icons/">fontawesome</a>,你也可以通过<a href="http://www.iconfont.cn/">iconfont</a>创作自己的图标图。</p>
+			<h4>41 New Icons in 4.7</h4>
+			<ul class="icon-list clear-float">
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/address-book"><i class="fa fa-address-book"></i>address-book</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/address-book-o"><i class="fa fa-address-book-o"></i>address-book-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-address-card"><i class="fa fa-address-card"></i>address-card</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-address-card-o"><i class="fa fa-address-card-o"></i>address-card-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-bandcamp"><i class="fa fa-bandcamp"></i>bandcamp</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-bath"><i class="fa fa-bath"></i>bath</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-bathtub"><i class="fa fa-bathtub"></i>bathtub</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-drivers-license"><i class="fa fa-drivers-license"></i>drivers-license</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-drivers-license-o"><i class="fa fa-drivers-license-o"></i>drivers-license-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-eercast"><i class="fa fa-eercast"></i>eercast</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-envelope-open"><i class="fa fa-envelope-open"></i>envelope-open</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-envelope-open-o"><i class="fa fa-envelope-open-o"></i>envelope-open-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-etsy"><i class="fa fa-etsy"></i>etsy</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-free-code-camp"><i class="fa fa-free-code-camp"></i>free-code-camp</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-handshake-o"><i class="fa fa-handshake-o"></i>handshake-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-id-badge"><i class="fa fa-id-badge"></i>id-badge</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-id-card"><i class="fa fa-id-card"></i>id-card</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-id-card-o"><i class="fa fa-id-card-o"></i>id-card-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-imdb"><i class="fa fa-imdb"></i>imdb</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-linode"><i class="fa fa-linode"></i>linode</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-meetup"><i class="fa fa-meetup"></i>meetup</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-microchip"><i class="fa fa-microchip"></i>microchip</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-podcast"><i class="fa fa-podcast"></i>podcast</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-quora"><i class="fa fa-quora"></i>quora</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-ravelry"><i class="fa fa-ravelry"></i>ravelry</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-s15"><i class="fa fa-s15"></i>s15</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-fa-shower"><i class="fa fa-shower"></i>shower</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-snowflake-o"><i class="fa fa-snowflake-o"></i>snowflake-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-superpowers"><i class="fa fa-superpowers"></i>superpowers</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-telegram"><i class="fa fa-telegram"></i>telegram</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer"><i class="fa fa-thermometer"></i>thermometer</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-0"><i class="fa fa-thermometer-0"></i>thermometer-0</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-1"><i class="fa fa-thermometer-1"></i>thermometer-1</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-2"><i class="fa fa-thermometer-2"></i>thermometer-2</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-3"><i class="fa fa-thermometer-3"></i>thermometer-3</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-4"><i class="fa fa-thermometer-4"></i>thermometer-4</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-empty"><i class="fa fa-thermometer-empty"></i>thermometer-empty</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-full"><i class="fa fa-thermometer-full"></i>thermometer-full</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-half"><i class="fa fa-thermometer-half"></i>thermometer-half</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-quarter"><i class="fa fa-thermometer-quarter"></i>thermometer-quarter</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-thermometer-three-quarters"><i class="fa fa-thermometer-three-quarters"></i>thermometer-three-quarters</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-times-rectangle"><i class="fa fa-times-rectangle"></i>times-rectangle</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-times-rectangle-o"><i class="fa fa-times-rectangle-o"></i>times-rectangle-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-user-circle"><i class="fa fa-user-circle"></i>user-circle</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-user-circle-o"><i class="fa fa-user-circle-o"></i>user-circle-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-user-o"><i class="fa fa-user-o"></i>user-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-vcard"><i class="fa fa-vcard"></i>vcard</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-vcard-o"><i class="fa fa-vcard-o"></i>vcard-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-window-close"><i class="fa fa-window-close"></i>window-close</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-window-close-o"><i class="fa fa-window-close-o"></i>window-close-o</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-window-maximize"><i class="fa fa-window-maximize"></i>window-maximize</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-window-minimize"><i class="fa fa-window-minimize"></i>window-minimize</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-window-restore"><i class="fa fa-window-restore"></i>window-restore</a></li>
+				<li class="col-xl-6"><a href="http://fontawesome.io/icon/fa-wpexplorer"><i class="fa fa-wpexplorer"></i>wpexplorer</a></li>
+			</ul>
+		</div>
+		<div class="doc-section" id="section-button">
+			<h3>按钮</h3>
+			<div class="clear-float">
+				<button class="btn">默认按钮</button>
+				<button class="btn btn-primary">主按钮</button>
+				<button class="btn btn-success">成功按钮</button>
+				<button class="btn btn-warning">警告按钮</button>
+				<button class="btn btn-danger">危险按钮</button>
+				<button class="btn btn-info">信息按钮</button>
+				<button class="btn btn-link">文字按钮</button>
+				<a class="btn btn-primary" href="http://www.bing.com" target="_blank">应用按钮样式的链接</a>
+			</div>
 		</div>
 	</div>
 </div>
